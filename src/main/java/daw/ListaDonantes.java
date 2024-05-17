@@ -1,9 +1,13 @@
 package daw;
 
+import conexion.LeerFichero;
 import donantes.DonanteDAO;
 import donantes.DonanteVO;
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class ListaDonantes {
 
@@ -11,6 +15,11 @@ public class ListaDonantes {
     private donantes.DonanteDAO daoDonante = new DonanteDAO();
 
     public ListaDonantes() throws SQLException {
+        try {
+            daoDonante.insertDonante(LeerFichero.leer("donantes.json"));
+        } catch (IOException ex) {
+            Logger.getLogger(ListaDonantes.class.getName()).log(Level.SEVERE, null, ex);
+        }
         listaDonantes= daoDonante.getAll();
 
     }

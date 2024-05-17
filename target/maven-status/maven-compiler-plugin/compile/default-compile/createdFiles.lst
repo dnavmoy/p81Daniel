@@ -7,6 +7,7 @@ daw/VentanaPrincipal$2.class
 daw/VentanaEditar$2.class
 daw/VentanaEditar$1.class
 conexion/Conexion.class
+conexion/LeerFichero.class
 daw/VentanaPrincipal$1.class
 daw/ModeloTablaPersona.class
 donantes/DonanteVO.class
